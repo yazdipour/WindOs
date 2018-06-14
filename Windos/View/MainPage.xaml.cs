@@ -20,7 +20,7 @@ namespace Windos.View
             new NavButton()
             {
                 Title="Calculator",
-                PageType=typeof(CacheMode),
+                PageType=typeof(CalculatorPage),
             },
             new NavButton()
             {

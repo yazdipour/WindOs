@@ -29,10 +29,11 @@
         <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="46"
                    x:Name="Titlebar"
                    Fill="{ThemeResource AcrylicBackgroundBrush40}" />
-        <Button Background="Transparent" 
-                Click="GoHome_Click" HorizontalAlignment="Left" VerticalAlignment="Top"
+        <Button Background="Transparent" Click="GoHome_Click" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
                 Content="&#xE112;" FontFamily="Segoe UI Symbol" Height="32" Width="46"/>
-
+        <TextBlock Text="Microsoft ToDo" Height="32" Margin="48 0" Padding="0,6"
+                   HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="SemiLight"/>
         <SplitView x:Name="splitView" Margin="0 52 8 0" IsPaneOpen="True" 
                    PaneBackground="{ThemeResource AcrylicBackgroundBrush60}" 
                    OpenPaneLength="220" DisplayMode="Inline">

@@ -32,9 +32,9 @@ namespace Windos.View
         public ToDoPage()
         {
             this.InitializeComponent();
-            var h = new Helpers.UIHandler();
-            h.TitleBarVisiblity(false, Titlebar);
-            h.TitleBarButton_TranparentBackground(false);
+            var uiHandler = new Helpers.UIHandler();
+            uiHandler.TitleBarVisiblity(false, Titlebar);
+            uiHandler.TitleBarButton_TranparentBackground(false);
             SizeChanged += (s, e) =>
             {
                 if (e.NewSize.Width < 720)
@@ -53,11 +53,7 @@ namespace Windos.View
             CloseDetailsBtn.Click += (s, e) => insideSplitView.IsPaneOpen = false;
         }
 
-
-        private void GoHome_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            Frame.GoBack();
-        }
+        private void GoHome_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e) => Frame.GoBack();
 
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
