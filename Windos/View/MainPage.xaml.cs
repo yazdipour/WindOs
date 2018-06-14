@@ -40,7 +40,7 @@ namespace Windos.View
             new NavButton()
             {
                 Title="ToDo",
-                PageType=typeof(MSToDoPage),
+                PageType=typeof(ToDoPage),
             }
         };
         public MainPage()

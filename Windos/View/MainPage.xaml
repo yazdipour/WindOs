@@ -11,6 +11,17 @@
     xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d">
+    <Page.Resources>
+        <Style TargetType="TextBlock" x:Key="Headers">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="0 40"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="{ThemeResource HubHeaderThemeFontSize}"/>
+            <Setter Property="FontWeight" Value="Thin"/>
+            <Setter Property="FontFamily" Value="Segoe UI Light"/>
+        </Style>
+    </Page.Resources>
     <Grid>
         <controls:OrbitView OrbitsEnabled="False" AnchorsEnabled="True" 
                   Background="{ThemeResource AcrylicBackgroundBrush40}"  IsItemClickEnabled="True" MinItemSize="50" 
@@ -35,7 +46,7 @@
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center">
                         <Ellipse.Fill>
-                            <ImageBrush ImageSource="ms-appx:///Assets/Imgs/ghost.jpg"/>
+                            <ImageBrush ImageSource="ms-appx:///Assets/LargeTile.png"/>
                         </Ellipse.Fill>
                     </Ellipse>
                 </controls:DropShadowPanel>
@@ -43,38 +54,34 @@
 
             <controls:OrbitView.ItemsSource>
                 <controls:OrbitViewDataItemCollection>
-                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Imgs/ghost.jpg" 
+                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Spotify-256.png" 
                                                 Distance="0.1" Label="Spotify" Diameter="0.2"/>
-                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Imgs/ghost.jpg" 
+                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/FileExplorer-256.png" 
                                                 Distance="0.2" Label="FileExplorer" Diameter="0.5"/>
-                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Imgs/ghost.jpg" 
+                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Calculator-256.png" 
                                                 Distance="0.4" Label="Calculator" Diameter="0.6"/>
-                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Imgs/ghost.jpg" Distance="0.8" 
+                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/People-500.png" Distance="0.8" 
                                                 Label="People" Diameter="0.8"/>
-                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Imgs/ghost.jpg" Distance="0.4" 
+                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Todo-400.png" Distance="0.4" 
                                                 Label="ToDo" Diameter="0.8"/>
-                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Imgs/ghost.jpg" 
-                                            Distance="0.6" Label="Skype" Diameter="0.8"/>
+                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Skype512x512.png" 
+                                            Distance="0.3" Label="Skype" Diameter="0.8"/>
                 </controls:OrbitViewDataItemCollection>
             </controls:OrbitView.ItemsSource>
         </controls:OrbitView>
 
-        <TextBlock Text="Windows" Style="{ThemeResource HeaderTextBlockStyle}"
-                       HorizontalAlignment="Center"
-                    VerticalAlignment="Top" Margin="0 100" >
+        <TextBlock Text="Windows" Style="{StaticResource Headers}" >
                 <interactivity:Interaction.Behaviors>
                   <behaviors:Fade x:Name="Fade"
                       Value="0"
-                      Duration="2519.11"
+                      Duration="2519.11" 
                       Delay="0"
                       EasingType="Cubic"
                       EasingMode="EaseIn"
                       AutomaticallyStart="True"/>
                 </interactivity:Interaction.Behaviors>
         </TextBlock>
-        <TextBlock Text="Wind Os" Style="{ThemeResource HeaderTextBlockStyle}"
-                   HorizontalAlignment="Center" Opacity="0"
-                    VerticalAlignment="Top" Margin="0 100" >
+        <TextBlock Text="Wind Os" Style="{StaticResource Headers}" Opacity="0">
                 <interactivity:Interaction.Behaviors>
                   <behaviors:Fade x:Name="Fade2"
                       Value="1"
