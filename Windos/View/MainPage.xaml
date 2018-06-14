@@ -24,9 +24,8 @@
     </Page.Resources>
     <Grid>
         <controls:OrbitView OrbitsEnabled="False" AnchorsEnabled="True" 
-                  Background="{ThemeResource AcrylicBackgroundBrush40}"  IsItemClickEnabled="True" MinItemSize="50" 
-                  ItemClick="Orbit_ItemClick"
-                    MaxItemSize="50" OrbitColor="White">
+                  Background="{ThemeResource AcrylicBackgroundBrush40}"  IsItemClickEnabled="True"
+                  ItemClick="Orbit_ItemClick" MinItemSize="50" MaxItemSize="80" OrbitColor="White">
             <controls:OrbitView.ItemTemplate>
                 <DataTemplate x:DataType="controls:OrbitViewDataItem">
                     <controls:DropShadowPanel Color="#444" BlurRadius="20" 
@@ -54,18 +53,18 @@
 
             <controls:OrbitView.ItemsSource>
                 <controls:OrbitViewDataItemCollection>
-                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Spotify-256.png" 
-                                                Distance="0.1" Label="Spotify" Diameter="0.2"/>
-                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/FileExplorer-256.png" 
-                                                Distance="0.2" Label="FileExplorer" Diameter="0.5"/>
-                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Calculator-256.png" 
-                                                Distance="0.4" Label="Calculator" Diameter="0.6"/>
-                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/People-500.png" Distance="0.8" 
+                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Spotify-256.png" Distance="0.1"
+                                                Label="Spotify" Diameter="0.2"/>
+                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/FileExplorer-256.png" Distance="0.2"
+                                                Label="FileExplorer" Diameter="0.5"/>
+                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Calculator-256.png" Distance="0.4" 
+                                                Label="Calculator" Diameter="0.6"/>
+                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/People-500.png" Distance="0.3" 
                                                 Label="People" Diameter="0.8"/>
-                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Todo-400.png" Distance="0.4" 
+                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Todo-400.png" Distance="0.5" 
                                                 Label="ToDo" Diameter="0.8"/>
-                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Skype512x512.png" 
-                                            Distance="0.3" Label="Skype" Diameter="0.8"/>
+                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Skype512x512.png" Distance="0.6"
+                                                Label="Skype" Diameter="0.8"/>
                 </controls:OrbitViewDataItemCollection>
             </controls:OrbitView.ItemsSource>
         </controls:OrbitView>
