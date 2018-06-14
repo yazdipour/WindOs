@@ -1,30 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Windos.View
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class CalculatorPage : Page
     {
         public CalculatorPage()
         {
             this.InitializeComponent();
+            var uiHandler = new Helpers.UIHandler();
+            uiHandler.TitleBarVisiblity(false, Titlebar);
+            uiHandler.TitleBarButton_TranparentBackground(false);
+
+            TreeViewNode calculatorFolder = new TreeViewNode() { Content = "Calculator", IsExpanded = true };
+
+            calculatorFolder.Children.Add(new TreeViewNode() { Content= "Standard" });
+            calculatorFolder.Children.Add(new TreeViewNode() { Content = "Scientific" });
+            calculatorFolder.Children.Add(new TreeViewNode() { Content = "Programmer" });
+            calculatorFolder.Children.Add(new TreeViewNode() { Content = "Date Calculation" });
+
+            TreeViewNode converterFolder = new TreeViewNode() { Content = "Converter" };
+            converterFolder.Children.Add(new TreeViewNode() { Content = "1" });
+            converterFolder.Children.Add(new TreeViewNode() { Content = "2" });
+            converterFolder.Children.Add(new TreeViewNode() { Content = "3" });
+
+            TreeViewNode settings = new TreeViewNode() { Content = "Settings" };
+
+            tree.RootNodes.Add(calculatorFolder);
+            tree.RootNodes.Add(converterFolder);
         }
+
+        private void GoHome_Click(object sender, RoutedEventArgs e) => Frame.GoBack();
     }
 }

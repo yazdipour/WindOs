@@ -5,10 +5,96 @@
     xmlns:local="using:Windos.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:ctrl="using:Windows.UI.Xaml.Controls"
+    xmlns:control="using:Windows.UI.Composition"
+    Background="{ThemeResource BlackAcrylicBackgroundBrush40}"
+    RequestedTheme="Dark"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Height" Value="56"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="RequestedTheme" Value="Light"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+    </Page.Resources>
     <Grid>
+        <SplitView x:Name="splitView" IsPaneOpen="True" 
+                   PaneBackground="Transparent"
+                   OpenPaneLength="300" DisplayMode="Inline" >
+            <SplitView.Pane>
+                <ctrl:TreeView x:Name="tree" SelectionMode="Single" VerticalAlignment="Center"/>
+            </SplitView.Pane>
+            <Grid Background="White" RequestedTheme="Light">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Standard" Margin="16 28" FontSize="32" FontWeight="SemiLight"
+                           Foreground="#FFA5A5A5" FontFamily="Segoe UI"/>
+                <StackPanel HorizontalAlignment="Right" Margin="42,42,42,0" 
+                            VerticalAlignment="Bottom">
+                    <TextBlock Text="710+1890" FontSize="24" HorizontalAlignment="Right" />
+                    <TextBlock FontSize="62" Text="2600" HorizontalAlignment="Right"
+                               FontFamily="Segoe UI" TextAlignment="Right"/>
+                </StackPanel>
+                <controls:DropShadowPanel BlurRadius="10" OffsetY="-8"
+                                          Color="Black" Grid.Row="1" ShadowOpacity="0.1"
+                                          HorizontalContentAlignment="Stretch"
+                                          VerticalAlignment="Bottom">
+                    <Grid Background="#fff" HorizontalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="CE" Grid.Row="0" Grid.Column="0"/>
+                        <Button Content="C" Grid.Row="0" Grid.Column="1"/>
+                        <Button Content="%" Grid.Row="0" Grid.Column="2"/>
+                        <Button Content="⁒" Grid.Row="0" Grid.Column="3"/>
 
+
+                        <Button Content="7" Grid.Row="1" Grid.Column="0" Background="#F9F9F9"/>
+                        <Button Content="8" Grid.Row="1" Grid.Column="1" Background="#F9F9F9"/>
+                        <Button Content="9" Grid.Row="1" Grid.Column="2" Background="#F9F9F9"/>
+                        <Button Content="x" Grid.Row="1" Grid.Column="3" Background="#F9F9F9"/>
+
+                        <Button Content="4" Grid.Row="2" Grid.Column="0"/>
+                        <Button Content="5" Grid.Row="2" Grid.Column="1"/>
+                        <Button Content="6" Grid.Row="2" Grid.Column="2"/>
+                        <Button Content="-" Grid.Row="2" Grid.Column="3"/>
+
+                        <Button Content="1" Grid.Row="3" Grid.Column="0" Background="#F9F9F9"/>
+                        <Button Content="2" Grid.Row="3" Grid.Column="1" Background="#F9F9F9"/>
+                        <Button Content="3" Grid.Row="3" Grid.Column="2" Background="#F9F9F9"/>
+                        <Button Content="+" Grid.Row="3" Grid.Column="3" Background="#F9F9F9"/>
+
+                        <Button Content="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"/>
+                        <Button Content="." Grid.Row="4" Grid.Column="2"/>
+                        <Button Content="=" Grid.Row="4" Grid.Column="3" />
+                    </Grid>
+                </controls:DropShadowPanel>
+            </Grid>
+        </SplitView>
+        
+        <TextBlock Text="Calculator" Height="32" Margin="48 0" Padding="0,6" Canvas.ZIndex="99"
+                   HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="SemiLight"/>
+        <Rectangle x:Name="Titlebar" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
+                   Fill="Transparent" Margin="48 0" Height="32" Canvas.ZIndex="99"/>
+        <Button Background="Transparent" Click="GoHome_Click" RequestedTheme="Dark"
+                Opacity="0.5" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White"
+                Content="&#xE112;" FontFamily="Segoe UI Symbol" Height="36" Width="48"/>
     </Grid>
 </Page>
