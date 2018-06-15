@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Windos.Model;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
 
 namespace Windos.View
 {
     public sealed partial class MainPage : Page
     {
-        string col = "";
         List<NavButton> navButtons = new List<NavButton>()
         {
             new NavButton()
@@ -46,6 +43,9 @@ namespace Windos.View
         public MainPage()
         {
             this.InitializeComponent();
+            var uiHandler = new Helpers.UIHandler();
+            uiHandler.TitleBarVisiblity(false, Titlebar);
+            uiHandler.TitleBarButton_TranparentBackground(false);
         }
 
         private void Orbit_ItemClick(object sender, Microsoft.Toolkit.Uwp.UI.Controls.OrbitViewItemClickedEventArgs e)

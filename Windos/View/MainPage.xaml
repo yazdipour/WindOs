@@ -91,5 +91,7 @@
                       AutomaticallyStart="True"/>
                 </interactivity:Interaction.Behaviors>
         </TextBlock>
+        <Rectangle x:Name="Titlebar" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
+                   Fill="Transparent" Margin="48 0" Height="32" Canvas.ZIndex="99"/>
     </Grid>
 </Page>

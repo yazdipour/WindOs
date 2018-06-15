@@ -28,6 +28,7 @@ namespace Windos.View
 
             tree.RootNodes.Add(calculatorFolder);
             tree.RootNodes.Add(converterFolder);
+            tree.RootNodes.Add(settings);
         }
 
         private void GoHome_Click(object sender, RoutedEventArgs e) => Frame.GoBack();
