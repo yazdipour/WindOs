@@ -17,11 +17,10 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Windos.View
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class FileExplorerPage : Page
     {
+        private void GoHome_Click(object sender, RoutedEventArgs e) => Frame.GoBack();
+
         public FileExplorerPage()
         {
             this.InitializeComponent();

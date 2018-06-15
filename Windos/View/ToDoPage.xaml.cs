@@ -6,6 +6,8 @@ namespace Windos.View
 {
     public sealed partial class ToDoPage : Page
     {
+        private void GoHome_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e) => Frame.GoBack();
+
         List<NavButton> navButtons = new List<NavButton>()
         {
             new NavButton()
@@ -52,8 +54,6 @@ namespace Windos.View
             MenuAppBar.Click += (s, e) => splitView.IsPaneOpen = !splitView.IsPaneOpen;
             CloseDetailsBtn.Click += (s, e) => insideSplitView.IsPaneOpen = false;
         }
-
-        private void GoHome_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e) => Frame.GoBack();
 
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {

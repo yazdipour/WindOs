@@ -5,6 +5,8 @@ namespace Windos.View
 {
     public sealed partial class CalculatorPage : Page
     {
+        private void GoHome_Click(object sender, RoutedEventArgs e) => Frame.GoBack();
+
         public CalculatorPage()
         {
             this.InitializeComponent();
@@ -31,6 +33,5 @@ namespace Windos.View
             tree.RootNodes.Add(settings);
         }
 
-        private void GoHome_Click(object sender, RoutedEventArgs e) => Frame.GoBack();
     }
 }
