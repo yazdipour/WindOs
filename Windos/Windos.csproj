@@ -135,6 +135,8 @@
     <Content Include="Assets\Icons\People-500.png" />
     <Content Include="Assets\Icons\Skype512x512.png" />
     <Content Include="Assets\Icons\Spotify-256.png" />
+    <Content Include="Assets\Icons\Terminal-480.png" />
+    <Content Include="Assets\Icons\Terminal-512.png" />
     <Content Include="Assets\Icons\Todo-400.png" />
     <Content Include="Assets\Imgs\ghost.jpg" />
     <Content Include="Assets\Imgs\ToDoTitle.png" />

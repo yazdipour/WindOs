@@ -38,6 +38,11 @@ namespace Windos.View
             {
                 Title="ToDo",
                 PageType=typeof(ToDoPage),
+            },
+            new NavButton()
+            {
+                Title="Terminal",
+                PageType=typeof(TerminalPage),
             }
         };
         public MainPage()

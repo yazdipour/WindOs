@@ -65,6 +65,8 @@
                                                 Label="ToDo" Diameter="0.8"/>
                     <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Skype512x512.png" Distance="0.6"
                                                 Label="Skype" Diameter="0.8"/>
+                    <controls:OrbitViewDataItem Image="ms-appx:///Assets/Icons/Terminal-480.png" Distance="1"
+                                                Label="Terminal" Diameter="0.8"/>
                 </controls:OrbitViewDataItemCollection>
             </controls:OrbitView.ItemsSource>
         </controls:OrbitView>

@@ -6,9 +6,58 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    RequestedTheme="Dark"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    Background="{ThemeResource BlackAcrylicBackgroundBrush40}" >
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Click="GoHome_Click"  Background="{ThemeResource BlackAcrylicBackgroundBrush60}"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#77ffffff"
+                Content="&#xE112;" FontFamily="Segoe UI Symbol" Height="32" Width="46"/>
+        <ListView Grid.Column="1" x:Name="TabLV" SelectionMode="Single" Height="32" 
+            VerticalAlignment="Top" Background="{ThemeResource BlackAcrylicBackgroundBrush60}"
+            ScrollViewer.HorizontalScrollMode="Enabled"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+            ScrollViewer.IsHorizontalRailEnabled="True">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="140" Height="32">
+                        <TextBlock Text="{Binding}" Height="32"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="&#xE10A;" FontSize="12"  Height="32"
+                                  FontFamily="Segoe UI Symbol" 
+                                  HorizontalAlignment="Right"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Rectangle Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="32"
+                   Fill="{ThemeResource BlackAcrylicBackgroundBrush60}" x:Name="Titlebar" />
 
+        <TextBlock x:Name="Console" Grid.ColumnSpan="3" Grid.Row="1" 
+                   Margin="4 0"  HorizontalAlignment="Stretch" FontFamily="Consolas"/>
+
+        <CommandBar  Grid.Row="1" Grid.ColumnSpan="3" 
+                     Background="{ThemeResource BlackAcrylicBackgroundBrush60}"
+                     HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                     IsOpen="False" DefaultLabelPosition="Collapsed">
+            <AppBarButton Icon="Keyboard" Label="Open Vistual Keyboard"/>
+            <AppBarButton Icon="Microphone" Label="Speech to Text"/>
+            <AppBarButton Icon="Setting"/>
+        </CommandBar>
     </Grid>
 </Page>
