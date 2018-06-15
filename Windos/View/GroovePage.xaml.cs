@@ -17,7 +17,7 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Windos.View
 {
-    private void GoHome_Click(object sender, RoutedEventArgs e) => Frame.GoBack();
+    //private void GoHome_Click(object sender, RoutedEventArgs e) => Frame.GoBack();
 
     public sealed partial class GroovePage : Page
     {

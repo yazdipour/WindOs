@@ -37,7 +37,7 @@ namespace Windos.View
             this.InitializeComponent();
             var uiHandler = new Helpers.UIHandler();
             uiHandler.TitleBarVisiblity(false, Titlebar);
-            uiHandler.TitleBarButton_TranparentBackground(false);
+            uiHandler.TitleBarButton_TranparentBackground(true);
             SizeChanged += (s, e) =>
             {
                 if (e.NewSize.Width < 720)
