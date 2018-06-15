@@ -5,10 +5,196 @@
     xmlns:local="using:Windos.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:model="using:Windos.Model"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    RequestedTheme="Dark"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    Background="{ThemeResource BlackAcrylicBackgroundBrush40}" >
     <Grid>
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="32"
+                   Fill="Transparent" x:Name="Titlebar" />
+        <Button Background="Transparent" Click="GoHome_Click"  Opacity="0.3"
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                Content="&#xE112;" FontFamily="Segoe UI Symbol" Height="32" Width="46"/>
+        <TextBlock Text="Skype" Height="32" Margin="48 0" Padding="0,6"
+                   HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="SemiLight"/>
+        <SplitView x:Name="splitView" Margin="0 36 0 0" IsPaneOpen="True" 
+                   PaneBackground="Transparent" 
+                   OpenPaneLength="280" DisplayMode="Inline">
+            <SplitView.Pane>
+                <Grid Margin="0 0 8 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
+                    <Grid Padding="4" Margin="8 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="26"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!--Row1-->
+                        <Button Grid.Column="0" Content="" FontFamily="Segoe UI Symbol" 
+                                Background="Transparent" HorizontalAlignment="Right"
+                                Style="{ThemeResource CircleButtonStyle}"/>
+                        <PersonPicture Grid.Column="1" ProfilePicture="ms-appx:///Assets/Imgs/ghost.jpg" 
+                                       DisplayName="Shahriar Yazdipour" Height="42" Margin="8" HorizontalAlignment="Center"/>
+                        <Button Grid.Column="2" Content="" FontFamily="Segoe UI Symbol" 
+                                Background="Transparent" Style="{ThemeResource CircleButtonStyle}"/>
+                        <!--Row2-->
+                        <TextBox Grid.ColumnSpan="3" Grid.Row="1" Background="Transparent"
+                                 BorderThickness="0 0 0 1" VerticalAlignment="Bottom"/>
+                        <SymbolIcon Grid.Column="2" Grid.Row="1" Symbol="Find" 
+                                    HorizontalAlignment="Right" Opacity=".5"/>
+                    </Grid>
+                    <Border Grid.Row="1" Background="{ThemeResource BlackAcrylicBackgroundBrush60}">
+                        <TextBlock Text="Conversations" Style="{ThemeResource SubtitleTextBlockStyle}"
+                                   Margin="16 16 0 8" FontWeight="SemiBold"/>
+                    </Border>
+                    <ListView x:Name="NavLinksList" Grid.Row="2"
+                              SelectionMode="Single" 
+                          VerticalAlignment="Stretch" ItemsSource="{x:Bind navButtons}" >
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="model:NavButton">
+                                <StackPanel Orientation="Horizontal" Grid.Row="2"
+                                            BorderBrush="#37aaaaaa" BorderThickness="0 0 0 1">
+                                    <Grid Margin="0 6">
+                                        <PersonPicture ProfilePicture="{x:Bind Icon}" Height="40" />
+                                        <Ellipse Fill="#00E153" Height="14" Width="14"
+                                                 HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                                    </Grid>
+                                    <StackPanel Margin="20,0,0,0" VerticalAlignment="Center">
+                                        <TextBlock Text="{x:Bind Title}" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                        <TextBlock Text="UWP Community"  Style="{ThemeResource BaseTextBlockStyle}"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </SplitView.Pane>
+            <controls:DropShadowPanel OffsetX="-4" ShadowOpacity="0.5" BlurRadius="16"
+                HorizontalContentAlignment="Stretch">
+                <Grid x:Name="inside" Background="#242424">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Top - Details-->
+                    <TextBlock Margin="16" Text="Shahriar Yazdipour" 
+                               FontWeight="Bold"
+                               FontSize="26"/>
+                    <Button Grid.Column="1" Content="" FontFamily="Segoe UI Symbol" 
+                                Background="Transparent" Style="{ThemeResource CircleButtonStyle}"/>
+                    <Button Grid.Column="2" Content="" FontFamily="Segoe UI Symbol" Margin="0 0 8 0"
+                                Background="Transparent" Style="{ThemeResource CircleButtonStyle}"/>
+                    <Border Grid.Row="1" Grid.ColumnSpan="3" Opacity=".2"
+                            BorderBrush="White" BorderThickness="1"/>
+                    <!--Buttom Textbox-->
+                    <Grid Grid.Row="3" Padding="8" Grid.ColumnSpan="3"
+                                HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Margin="8 0" Style="{ThemeResource CircleButtonStyle}" Width="38" Height="38"
+                                FontSize="12" Content="" FontFamily="Segoe UI Symbol">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF3BC9EC"/>
+                                    <GradientStop Color="#FF0098ED" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <Border Grid.Column="1" CornerRadius="20" Background="#4C4C4C" 
+                                HorizontalAlignment="Stretch">
+                            <TextBox Background="Transparent" BorderBrush="Transparent"
+                                     FocusVisualPrimaryThickness="0"
+                                     FocusVisualPrimaryBrush="Transparent" 
+                                     FocusVisualSecondaryBrush="Transparent"
+                                     FocusVisualSecondaryThickness="0"/>
+                        </Border>
+                        <Button Grid.Column="2" Content="" FontFamily="Segoe UI Symbol" 
+                                Background="Transparent" Style="{ThemeResource CircleButtonStyle}"/>
+                        <Button Grid.Column="3" Content="" FontFamily="Segoe UI Symbol" Margin="0 0 8 0"
+                                Background="Transparent" Style="{ThemeResource CircleButtonStyle}"/>
+                    </Grid>
+                    <!--Chat History-->
+                    <ListView Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Bottom">
+                        <ListViewItem HorizontalAlignment="Right">
+                            <Border Background="#4C4C4C" Padding="8" CornerRadius="8 8 0 8">
+                                <TextBlock Text="Hello, it's me"/>
+                            </Border>
+                        </ListViewItem>
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal">
+                                <PersonPicture Height="48"/>
+                                <StackPanel Margin="16 0 0 0">
+                                    <TextBlock Text="2:30 Friday" Margin="0 0 0 6" Opacity="0.5"
+                                               Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                    <Border Padding="8" CornerRadius="0 8 8 8" MaxWidth="220">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="1,1">
+                                                <GradientStop Color="#FF3BC9EC"/>
+                                                <GradientStop Color="#FF0098ED" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <TextBlock Text="I was wondering if after all these years you'd like to meet" TextWrapping="Wrap"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem HorizontalAlignment="Right">
+                            <Border Background="#4C4C4C" Padding="8" CornerRadius="8 8 0 8">
+                                <TextBlock Text="To go over everything"/>
+                            </Border>
+                        </ListViewItem>
+                        <ListViewItem HorizontalAlignment="Right">
+                            <Border Background="#4C4C4C" Padding="8" CornerRadius="8 8 0 8">
+                                <TextBlock Text="They say that time's supposed to heal ya"/>
+                            </Border>
+                        </ListViewItem>
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal">
+                                <PersonPicture Height="48"/>
+                                <StackPanel Margin="16 0 0 0">
+                                    <TextBlock Text="2:30 Friday" Margin="0 0 0 6" Opacity="0.5"
+                                               Style="{ThemeResource CaptionTextBlockStyle}"/>
+                                    <Border Padding="8" CornerRadius="0 8 8 8" MaxWidth="220">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="1,1">
+                                                <GradientStop Color="#FF3BC9EC"/>
+                                                <GradientStop Color="#FF0098ED" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <TextBlock Text="But I ain't done much healing" TextWrapping="Wrap"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                </Grid>
+            </controls:DropShadowPanel>
+        </SplitView>
     </Grid>
 </Page>

@@ -30,6 +30,12 @@
                             TintColor="{StaticResource AcrylicBrushTintColor1}" 
                             FallbackColor="{StaticResource AcrylicBrushFallbackColor1}"/>
 
+        <media:AcrylicBrush x:Key="BlackAcrylicBackgroundBrush60" 
+                            BackgroundSource="HostBackdrop" 
+                            TintOpacity="0.6" 
+                            TintColor="{StaticResource BlackAcrylicBrushTintColor1}" 
+                            FallbackColor="{StaticResource BlackAcrylicBrushFallbackColor1}"/>
+
         <media:AcrylicBrush x:Key="AcrylicBackgroundBrush70" 
                             BackgroundSource="HostBackdrop" 
                             TintOpacity="0.7" 

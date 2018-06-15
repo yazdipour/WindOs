@@ -1,31 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using System.Collections.Generic;
+using Windos.Model;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Windos.View
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class SkypePage : Page
     {
+        private void GoHome_Click(object sender, RoutedEventArgs e) => Frame.GoBack();
+
+        List<NavButton> navButtons = new List<NavButton>()
+        {
+            new NavButton()
+            {
+                Title="Shahriar Yazdipour",
+                Icon="ms-appx:///Assets/Imgs/ghost.jpg"
+            },
+            new NavButton()
+            {
+                Title="Satya Nadella",
+                Icon="ms-appx:///Assets/Imgs/ghost.jpg"
+            },
+            new NavButton()
+            {
+                Title="Satya Nadella",
+                Icon="ms-appx:///Assets/Imgs/ghost.jpg"
+            },
+            new NavButton()
+            {
+                Title="David",
+                Icon="ms-appx:///Assets/Imgs/ghost.jpg"
+            }
+        };
         public SkypePage()
         {
             this.InitializeComponent();
+            var uiHandler = new Helpers.UIHandler();
+            uiHandler.TitleBarVisiblity(false, Titlebar);
+            uiHandler.TitleBarButton_TranparentBackground(false);
+            SizeChanged += (s, e) =>
+            {
+                if (e.NewSize.Width < 720)
+                {
+                    splitView.IsPaneOpen = false;
+                    //MenuAppBar.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                }
+                else
+                {
+                    splitView.IsPaneOpen = true;
+                    //MenuAppBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                }
+
+            };
         }
-        private void GoHome_Click(object sender, RoutedEventArgs e) => Frame.GoBack();
     }
 }
