@@ -49,6 +49,7 @@
                                 Background="Transparent" Style="{ThemeResource CircleButtonStyle}"/>
                         <!--Row2-->
                         <TextBox Grid.ColumnSpan="3" Grid.Row="1" Background="Transparent"
+                                 PlaceholderText="Search"
                                  BorderThickness="0 0 0 1" VerticalAlignment="Bottom"/>
                         <SymbolIcon Grid.Column="2" Grid.Row="1" Symbol="Find" 
                                     HorizontalAlignment="Right" Opacity=".5"/>
