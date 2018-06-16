@@ -5,10 +5,196 @@
     xmlns:local="using:Windos.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:model="using:Windos.Model"
+    Background="{ThemeResource AcrylicBackgroundBrush60}"
+    mc:Ignorable="d">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="42"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="32"
+                   Fill="Transparent" x:Name="Titlebar" />
+        <TextBlock Grid.ColumnSpan="2" Text="People" Height="32" Margin="48 0" Padding="0,6"
+                   HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="SemiLight"/>
 
+        <Grid Grid.Column="0" Background="{ThemeResource AcrylicBackgroundBrush40}">
+            <Button Background="Transparent" Click="GoHome_Click" 
+                VerticalAlignment="Top" Opacity="0.3"
+                Content="&#xE112;" FontFamily="Segoe UI Symbol" Height="32" Width="42"/>
+            <ListView VerticalAlignment="Center" Width="42">
+                <FontIcon Glyph="&#xE163;" FontFamily="Segoe MDL2 Assets"/>
+                <FontIcon Glyph="&#xE125;" FontFamily="Segoe MDL2 Assets"/>
+                <FontIcon Glyph="&#xE13A;" FontFamily="Segoe MDL2 Assets"/>
+            </ListView>
+            <ListView VerticalAlignment="Bottom" Width="42">
+                <FontIcon Grid.Column="0" Glyph="&#xE115;" FontFamily="Segoe MDL2 Assets"/>
+                <PersonPicture Width="30" Margin="-6 0 0 0" ProfilePicture="ms-appx:///Assets/Imgs/ghost.jpg"/>
+            </ListView>
+        </Grid>
+        <SplitView Grid.Column="1" x:Name="splitView" Margin="0 36 0 0" 
+                   PaneBackground="Transparent" IsPaneOpen="True" 
+                   OpenPaneLength="280" DisplayMode="Inline">
+            <SplitView.Pane>
+                <Grid Margin="0 0 8 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Padding="4" Margin="8 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="26"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!--Row1-->
+                        <Button Grid.Column="0" Content="" FontFamily="Segoe UI Symbol" 
+                                Background="Transparent" HorizontalAlignment="Right"
+                                Style="{ThemeResource CircleButtonStyle}"/>
+                        <PersonPicture Grid.Column="1" ProfilePicture="ms-appx:///Assets/Imgs/ghost.jpg" 
+                                       DisplayName="Shahriar Yazdipour" Height="42" Margin="8" HorizontalAlignment="Center"/>
+                        <Button Grid.Column="2" Content="" FontFamily="Segoe UI Symbol" 
+                                Background="Transparent" Style="{ThemeResource CircleButtonStyle}"/>
+                        <!--Row2-->
+                        <TextBox Grid.ColumnSpan="3" Grid.Row="1" Background="Transparent" PlaceholderText="Search"
+                                 BorderThickness="0 0 0 1" VerticalAlignment="Bottom"/>
+                        <SymbolIcon Grid.Column="2" Grid.Row="1" Symbol="Find" 
+                                    HorizontalAlignment="Right" Opacity=".5"/>
+                    </Grid>
+                    <!--Contacts List-->
+                    <!--TODO : Better to make it Group List-->
+                    <ListView x:Name="NavLinksList" Grid.Row="2"
+                              SelectionMode="Single" 
+                          VerticalAlignment="Stretch" ItemsSource="{x:Bind navButtons}" >
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="model:NavButton">
+                                <StackPanel Orientation="Horizontal" Grid.Row="2">
+                                    <PersonPicture  Margin="10 12" ProfilePicture="{x:Bind Icon}" Height="42" />
+                                    <TextBlock Text="{x:Bind Title}" 
+                                               VerticalAlignment="Center"
+                                               Style="{ThemeResource BaseTextBlockStyle}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </SplitView.Pane>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!-- Details-->
+                <controls:DropShadowPanel OffsetX="-4" ShadowOpacity="0.5" Grid.Row="1"
+                                      BlurRadius="16" HorizontalContentAlignment="Stretch">
+                    <Grid x:Name="inside" Background="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!--Top - Details-->
+                        <TextBlock Margin="16" Text="Shahriar Yazdipour" 
+                               FontWeight="Bold"
+                               FontSize="26"/>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <Button Content="&#xE72D;" FontFamily="Segoe MDL2 Assets" Margin="0 0 8 0" Height="32"
+                                Background="Transparent" Style="{ThemeResource CircleButtonStyle}"/>
+                            <Button Content="" FontFamily="Segoe MDL2 Assets"  Height="32"
+                                Background="Transparent" Style="{ThemeResource CircleButtonStyle}"/>
+                            <Button Content="" FontFamily="Segoe MDL2 Assets" Margin="0 0 8 0" Height="32"
+                                Background="Transparent" Style="{ThemeResource CircleButtonStyle}"/>
+                        </StackPanel>
+                        <Pivot Grid.Row="1" Grid.ColumnSpan="2" Margin="4 -8 0 0">
+                            <Pivot.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" FontWeight="SemiBold" FontSize="16"/>
+                                </DataTemplate>
+                            </Pivot.HeaderTemplate>
+                            <PivotItem Header="Profile">
+                                <ListView>
+                                    <StackPanel Margin="0 4" Padding="-8 4" VerticalAlignment="Center">
+                                        <TextBlock Text="Phone Number" FontWeight="Light" FontSize="18"/>
+                                        <TextBlock Text="+98 921 66 55 44"  Style="{ThemeResource BaseTextBlockStyle}"/>
+                                    </StackPanel>
+                                    <StackPanel Margin="0 4" Padding="-8 4" VerticalAlignment="Center">
+                                        <TextBlock Text="Call from app" FontWeight="Light" FontSize="18"/>
+                                        <TextBlock Text="Skype"  Style="{ThemeResource BaseTextBlockStyle}"/>
+                                    </StackPanel>
+                                    <StackPanel Margin="0 4" Padding="-8 4" VerticalAlignment="Center">
+                                        <TextBlock Text="Video call from app" FontWeight="Light" FontSize="18"/>
+                                        <TextBlock Text="Skype"  Style="{ThemeResource BaseTextBlockStyle}"/>
+                                    </StackPanel>
+                                    <StackPanel Margin="0 4" Padding="-8 4" VerticalAlignment="Center">
+                                        <TextBlock Text="Mail" FontWeight="Light" FontSize="18"/>
+                                        <TextBlock Text="shahriar.yazdipour@outlook.com"  Style="{ThemeResource BaseTextBlockStyle}"/>
+                                    </StackPanel>
+                                    <StackPanel Margin="0 4" Padding="-8 4" VerticalAlignment="Center">
+                                        <TextBlock Text="Address" FontWeight="Light" FontSize="18"/>
+                                        <TextBlock Text="Somewhere Street, Tehran, IR"  Style="{ThemeResource BaseTextBlockStyle}"/>
+                                    </StackPanel>
+                                </ListView>
+                            </PivotItem>
+                            <PivotItem Header="News">
+                                <TextBlock Text="unread News go here." />
+                            </PivotItem>
+                            <PivotItem Header="Historic">
+                                <TextBlock Text="Historic go here." />
+                            </PivotItem>
+                            <PivotItem Header="Pictures">
+                                <TextBlock Text="Pictures go here." />
+                            </PivotItem>
+                        </Pivot>
+                    </Grid>
+                </controls:DropShadowPanel>
+
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="12 0 0 0">
+                    <Grid>
+                        <controls:DropShadowPanel BlurRadius="24" Color="Black" Margin="4 12">
+                            <Ellipse Width="46" Height="46">
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="ms-appx:///Assets/Imgs/ghost.jpg"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </controls:DropShadowPanel>
+                        <Rectangle Fill="White" Width="16" Height="16" 
+                                   VerticalAlignment="Bottom" Margin="0 0 0 -8" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <CompositeTransform Rotation="45"/>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                    </Grid>
+                    <controls:DropShadowPanel BlurRadius="24" Color="Black" Margin="4 8">
+                        <Ellipse Width="46" Height="46" Opacity="0.8">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="ms-appx:///Assets/Imgs/ghost.jpg"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </controls:DropShadowPanel>
+                    <controls:DropShadowPanel BlurRadius="24" Color="Black" Margin="4 8">
+                        <Ellipse Width="46" Height="46" Opacity="0.8">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="ms-appx:///Assets/Imgs/ghost.jpg"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </controls:DropShadowPanel>
+                </StackPanel>
+            </Grid>
+        </SplitView>
     </Grid>
 </Page>
