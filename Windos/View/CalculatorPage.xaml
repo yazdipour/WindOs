@@ -93,8 +93,8 @@
                    HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="SemiLight"/>
         <Rectangle x:Name="Titlebar" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
                    Fill="Transparent" Margin="48 0" Height="32" Canvas.ZIndex="99"/>
-        <Button Background="Transparent" Click="GoHome_Click" RequestedTheme="Dark"
-                Opacity="0.5" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White"
-                Content="&#xE112;" FontFamily="Segoe UI Symbol" Height="36" Width="48"/>
+        <Button Background="Transparent" Click="GoHome_Click" RequestedTheme="Dark" FontSize="14"
+                Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White"
+                Content="&#xE112;" FontFamily="Segoe UI Symbol" Height="32" Width="42"/>
     </Grid>
 </Page>

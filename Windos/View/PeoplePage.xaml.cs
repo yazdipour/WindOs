@@ -9,27 +9,26 @@ namespace Windos.View
     {
         private void GoHome_Click(object sender, RoutedEventArgs e) => Frame.GoBack();
 
-        List<NavButton> navButtons = new List<NavButton>()
-        {
+        NavButton[] navButtons = {
             new NavButton()
             {
                 Title="Shahriar Yazdipour",
-                Icon="ms-appx:///Assets/Imgs/ghost.jpg"
+                Icon="ms-appx:///Assets/Imgs/avatar/shahriar.jpg"
             },
             new NavButton()
             {
                 Title="Satya Nadella",
-                Icon="ms-appx:///Assets/Imgs/ghost.jpg"
+                Icon="ms-appx:///Assets/Imgs/avatar/satya.jpg"
             },
             new NavButton()
             {
-                Title="Satya Nadella",
-                Icon="ms-appx:///Assets/Imgs/ghost.jpg"
+                Title="Nikola Metulev",
+                Icon="ms-appx:///Assets/Imgs/avatar/nikola.jpg"
             },
             new NavButton()
             {
-                Title="David",
-                Icon="ms-appx:///Assets/Imgs/ghost.jpg"
+                Title="Shen Chauhan",
+                Icon="ms-appx:///Assets/Imgs/avatar/shen.jpg"
             }
         };
         public PeoplePage()

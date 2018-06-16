@@ -43,7 +43,7 @@
                         <Button Grid.Column="0" Content="" FontFamily="Segoe UI Symbol" 
                                 Background="Transparent" HorizontalAlignment="Right"
                                 Style="{ThemeResource CircleButtonStyle}"/>
-                        <PersonPicture Grid.Column="1" ProfilePicture="ms-appx:///Assets/Imgs/ghost.jpg" 
+                        <PersonPicture Grid.Column="1" ProfilePicture="ms-appx:///Assets/Imgs/avatar/shahriar.jpg" 
                                        DisplayName="Shahriar Yazdipour" Height="42" Margin="8" HorizontalAlignment="Center"/>
                         <Button Grid.Column="2" Content="" FontFamily="Segoe UI Symbol" 
                                 Background="Transparent" Style="{ThemeResource CircleButtonStyle}"/>
@@ -149,7 +149,7 @@
                         </ListViewItem>
                         <ListViewItem>
                             <StackPanel Orientation="Horizontal">
-                                <PersonPicture Height="48"/>
+                                <PersonPicture Height="48" ProfilePicture="{x:Bind navButtons[0].Icon}"/>
                                 <StackPanel Margin="16 0 0 0">
                                     <TextBlock Text="2:30 Friday" Margin="0 0 0 6" Opacity="0.5"
                                                Style="{ThemeResource CaptionTextBlockStyle}"/>
@@ -177,7 +177,7 @@
                         </ListViewItem>
                         <ListViewItem>
                             <StackPanel Orientation="Horizontal">
-                                <PersonPicture Height="48"/>
+                                <PersonPicture Height="48" ProfilePicture="{x:Bind navButtons[0].Icon}"/>
                                 <StackPanel Margin="16 0 0 0">
                                     <TextBlock Text="2:30 Friday" Margin="0 0 0 6" Opacity="0.5"
                                                Style="{ThemeResource CaptionTextBlockStyle}"/>

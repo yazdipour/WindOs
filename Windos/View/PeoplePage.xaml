@@ -30,7 +30,7 @@
             </ListView>
             <ListView VerticalAlignment="Bottom" Width="42">
                 <FontIcon Grid.Column="0" Glyph="&#xE115;" FontFamily="Segoe MDL2 Assets"/>
-                <PersonPicture Width="30" Margin="-6 0 0 0" ProfilePicture="ms-appx:///Assets/Imgs/ghost.jpg"/>
+                <PersonPicture Width="30" Margin="-6 0 0 0" ProfilePicture="ms-appx:///Assets/Imgs/avatar/shahriar.jpg"/>
             </ListView>
         </Grid>
         <SplitView Grid.Column="1" x:Name="splitView" Margin="0 36 0 0" 
@@ -58,7 +58,7 @@
                         <Button Grid.Column="0" Content="" FontFamily="Segoe UI Symbol" 
                                 Background="Transparent" HorizontalAlignment="Right"
                                 Style="{ThemeResource CircleButtonStyle}"/>
-                        <PersonPicture Grid.Column="1" ProfilePicture="ms-appx:///Assets/Imgs/ghost.jpg" 
+                        <PersonPicture Grid.Column="1" ProfilePicture="ms-appx:///Assets/Imgs/avatar/shahriar.jpg" 
                                        DisplayName="Shahriar Yazdipour" Height="42" Margin="8" HorizontalAlignment="Center"/>
                         <Button Grid.Column="2" Content="" FontFamily="Segoe UI Symbol" 
                                 Background="Transparent" Style="{ThemeResource CircleButtonStyle}"/>
@@ -168,7 +168,7 @@
                         <controls:DropShadowPanel BlurRadius="24" Color="Black" Margin="4 12">
                             <Ellipse Width="46" Height="46">
                                 <Ellipse.Fill>
-                                    <ImageBrush ImageSource="ms-appx:///Assets/Imgs/ghost.jpg"/>
+                                    <ImageBrush ImageSource="{x:Bind navButtons[0].Icon}"/>
                                 </Ellipse.Fill>
                             </Ellipse>
                         </controls:DropShadowPanel>
@@ -182,14 +182,14 @@
                     <controls:DropShadowPanel BlurRadius="24" Color="Black" Margin="4 8">
                         <Ellipse Width="46" Height="46" Opacity="0.8">
                             <Ellipse.Fill>
-                                <ImageBrush ImageSource="ms-appx:///Assets/Imgs/ghost.jpg"/>
+                                <ImageBrush ImageSource="{x:Bind navButtons[2].Icon}"/>
                             </Ellipse.Fill>
                         </Ellipse>
                     </controls:DropShadowPanel>
                     <controls:DropShadowPanel BlurRadius="24" Color="Black" Margin="4 8">
                         <Ellipse Width="46" Height="46" Opacity="0.8">
                             <Ellipse.Fill>
-                                <ImageBrush ImageSource="ms-appx:///Assets/Imgs/ghost.jpg"/>
+                                <ImageBrush ImageSource="{x:Bind navButtons[3].Icon}"/>
                             </Ellipse.Fill>
                         </Ellipse>
                     </controls:DropShadowPanel>

@@ -138,6 +138,10 @@
     <Content Include="Assets\Icons\Terminal-480.png" />
     <Content Include="Assets\Icons\Terminal-512.png" />
     <Content Include="Assets\Icons\Todo-400.png" />
+    <Content Include="Assets\Imgs\avatar\nikola.jpg" />
+    <Content Include="Assets\Imgs\avatar\satya.jpg" />
+    <Content Include="Assets\Imgs\avatar\shahriar.jpg" />
+    <Content Include="Assets\Imgs\avatar\shen.jpg" />
     <Content Include="Assets\Imgs\ghost.jpg" />
     <Content Include="Assets\Imgs\ToDoTitle.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
