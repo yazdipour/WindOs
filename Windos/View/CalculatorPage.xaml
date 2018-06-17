@@ -91,10 +91,7 @@
         
         <TextBlock Text="Calculator" Height="32" Margin="48 0" Padding="0,6" Canvas.ZIndex="99"
                    HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="SemiLight"/>
-        <Rectangle x:Name="Titlebar" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
-                   Fill="Transparent" Margin="48 0" Height="32" Canvas.ZIndex="99"/>
-        <Button Background="Transparent" Click="GoHome_Click" RequestedTheme="Dark" FontSize="14"
-                Opacity="0.3" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White"
-                Content="&#xE112;" FontFamily="Segoe UI Symbol" Height="32" Width="42"/>
+        <Rectangle x:Name="Titlebar" Style="{ThemeResource CustomTitleBar}"/>
+        <Button Click="GoHome_Click" Style="{ThemeResource CustomBackButton}"/>
     </Grid>
 </Page>

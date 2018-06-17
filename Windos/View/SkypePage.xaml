@@ -11,13 +11,12 @@
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     Background="{ThemeResource BlackAcrylicBackgroundBrush40}" >
     <Grid>
-        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="32"
-                   Fill="Transparent" x:Name="Titlebar" />
-        <Button Background="Transparent" Click="GoHome_Click"  Opacity="0.3"
-                HorizontalAlignment="Left" VerticalAlignment="Top"
-                Content="&#xE112;" FontFamily="Segoe UI Symbol" Height="32" Width="46"/>
+        <Rectangle x:Name="Titlebar" Style="{ThemeResource CustomTitleBar}" />
+
         <TextBlock Text="Skype" Height="32" Margin="48 0" Padding="0,6"
                    HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="SemiLight"/>
+        <Button Click="GoHome_Click" Style="{ThemeResource CustomBackButton}"/>
+        
         <SplitView x:Name="splitView" Margin="0 36 0 0" IsPaneOpen="True" 
                    PaneBackground="Transparent" 
                    OpenPaneLength="280" DisplayMode="Inline">

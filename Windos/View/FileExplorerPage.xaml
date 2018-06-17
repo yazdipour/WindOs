@@ -9,6 +9,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource AcrylicBackgroundBrush40}">
+        <Button Click="GoHome_Click" Style="{ThemeResource CustomBackButton}"/>
 
+        <Rectangle x:Name="Titlebar" Style="{ThemeResource CustomTitleBar}"/>
     </Grid>
 </Page>

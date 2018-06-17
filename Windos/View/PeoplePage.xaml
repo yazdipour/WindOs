@@ -14,15 +14,13 @@
             <ColumnDefinition Width="42"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="32"
-                   Fill="Transparent" x:Name="Titlebar" />
         <TextBlock Grid.ColumnSpan="2" Text="People" Height="32" Margin="48 0" Padding="0,6"
                    HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="SemiLight"/>
+        <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="32"
+                   Fill="Transparent" x:Name="Titlebar" />
 
         <Grid Grid.Column="0" Background="{ThemeResource AcrylicBackgroundBrush40}">
-            <Button Background="Transparent" Click="GoHome_Click" 
-                VerticalAlignment="Top" Opacity="0.3"
-                Content="&#xE112;" FontFamily="Segoe UI Symbol" Height="32" Width="42"/>
+            <Button Click="GoHome_Click" Style="{ThemeResource CustomBackButton}"/>
             <ListView VerticalAlignment="Center" Width="42">
                 <FontIcon Glyph="&#xE163;" FontFamily="Segoe MDL2 Assets"/>
                 <FontIcon Glyph="&#xE125;" FontFamily="Segoe MDL2 Assets"/>

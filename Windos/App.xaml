@@ -6,6 +6,23 @@
     xmlns:media="using:Windows.UI.Xaml.Media"
     RequestedTheme="Light">
     <Application.Resources>
+        <Style TargetType="Button" x:Key="CustomBackButton">
+            <Setter Property="Width" Value="42"/>
+            <Setter Property="Height" Value="32"/>
+            <Setter Property="FontFamily" Value="Segoe UI Symbol"/>
+            <Setter Property="Opacity" Value=".3"/>
+            <Setter Property="Content" Value="&#xE112;"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+
+        <Style TargetType="Rectangle" x:Key="CustomTitleBar">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Fill" Value="Transparent"/>
+            <Setter Property="Height" Value="32"/>
+        </Style>
+
         <Color x:Key="AcrylicBrushTintColor1">#fefefe</Color>
         <Color x:Key="AcrylicBrushFallbackColor1">#eee</Color>
         <Color x:Key="BlackAcrylicBrushTintColor1">#333</Color>
