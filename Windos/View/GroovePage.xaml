@@ -8,10 +8,13 @@
     mc:Ignorable="d"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     Background="{ThemeResource AcrylicBackgroundBrush60}" >
-
     <Grid>
+        <Rectangle x:Name="Titlebar" Style="{ThemeResource CustomTitleBar}"/>
         <Button Click="GoHome_Click" Style="{ThemeResource CustomBackButton}"/>
 
-        <Rectangle x:Name="Titlebar" Style="{ThemeResource CustomTitleBar}"/>
+        <TextBlock Text="Not Ready yet!" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Style="{ThemeResource HeaderTextBlockStyle}"/>
     </Grid>
 </Page>
