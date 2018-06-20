@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Windos.Model;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Animation;
 
 namespace Windos.View
 {
@@ -58,6 +60,11 @@ namespace Windos.View
             var btn = e.Item as Microsoft.Toolkit.Uwp.UI.Controls.OrbitViewDataItem;
             var res = navButtons.Find(obj => obj.Title == btn.Label);
             if (res != null) Frame.Navigate(res.PageType);
+        }
+
+        private void CenterEllipse_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(AboutPage));
         }
     }
 }

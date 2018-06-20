@@ -42,12 +42,14 @@ namespace Windos.View
                 if (e.NewSize.Width < 720)
                 {
                     splitView.IsPaneOpen = false;
+                    splitView.DisplayMode = SplitViewDisplayMode.Overlay;
                     MenuAppBar.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 }
                 else
                 {
                     splitView.IsPaneOpen = true;
                     MenuAppBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    splitView.DisplayMode = SplitViewDisplayMode.Inline;
                 }
 
             };

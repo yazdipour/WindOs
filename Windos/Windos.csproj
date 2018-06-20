@@ -19,6 +19,12 @@
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <PackageCertificateKeyFile>Windos_StoreKey.pfx</PackageCertificateKeyFile>
     <PackageCertificateThumbprint>5F6BA6DC10F140BBCE1F240B42E543F268F44665</PackageCertificateThumbprint>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -99,8 +105,8 @@
     <Compile Include="Helpers\UIHandler.cs" />
     <Compile Include="Model\NavButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\AboutDialog.xaml.cs">
-      <DependentUpon>AboutDialog.xaml</DependentUpon>
+    <Compile Include="View\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CalculatorPage.xaml.cs">
       <DependentUpon>CalculatorPage.xaml</DependentUpon>
@@ -137,6 +143,7 @@
   <ItemGroup>
     <Content Include="Assets\Icons\Calculator-256.png" />
     <Content Include="Assets\Icons\FileExplorer-256.png" />
+    <Content Include="Assets\Icons\github-character.png" />
     <Content Include="Assets\Icons\People-500.png" />
     <Content Include="Assets\Icons\Skype512x512.png" />
     <Content Include="Assets\Icons\Spotify-256.png" />
@@ -204,7 +211,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\AboutDialog.xaml">
+    <Page Include="View\AboutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

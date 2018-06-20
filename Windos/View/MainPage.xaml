@@ -8,8 +8,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:media="using:Windows.UI.Xaml.Media"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
-    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Animations.Behaviors"
     mc:Ignorable="d">
     <Page.Resources>
         <Style TargetType="TextBlock" x:Key="Headers">
@@ -24,7 +24,8 @@
     </Page.Resources>
     <Grid>
         <controls:OrbitView OrbitsEnabled="False" AnchorsEnabled="True" 
-                  Background="{ThemeResource AcrylicBackgroundBrush40}"  IsItemClickEnabled="True"
+                  Background="{ThemeResource AcrylicBackgroundBrush40}"  
+                  IsItemClickEnabled="True"
                   ItemClick="Orbit_ItemClick" MinItemSize="50" MaxItemSize="80" OrbitColor="White">
             <controls:OrbitView.ItemTemplate>
                 <DataTemplate x:DataType="controls:OrbitViewDataItem">
@@ -41,13 +42,9 @@
             </controls:OrbitView.ItemTemplate>
             <controls:OrbitView.CenterContent>
                 <controls:DropShadowPanel BlurRadius="24" Color="White">
-                    <Ellipse Width="60" Height="60"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center">
-                        <Ellipse.Fill>
-                            <ImageBrush ImageSource="ms-appx:///Assets/LargeTile.png"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
+                    <Image Width="200" Height="200" Tapped="CenterEllipse_Tapped"
+                           HorizontalAlignment="Center" Source="ms-appx:///Assets/LargeTile.png"
+                           VerticalAlignment="Center" x:Name="CenteredImage"/>
                 </controls:DropShadowPanel>
             </controls:OrbitView.CenterContent>
 
@@ -95,5 +92,7 @@
         </TextBlock>
         <Rectangle x:Name="Titlebar" HorizontalAlignment="Stretch" VerticalAlignment="Top" 
                    Fill="Transparent" Margin="48 0" Height="32" Canvas.ZIndex="99"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="16" Style="{ThemeResource CaptionTextBlockStyle}"
+            Text="Open source application to show that UWP Applications can look much better with a little effort."/>
     </Grid>
 </Page>

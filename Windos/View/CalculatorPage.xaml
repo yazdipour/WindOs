@@ -8,7 +8,6 @@
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:ctrl="using:Windows.UI.Xaml.Controls"
     xmlns:control="using:Windows.UI.Composition"
-    Background="{ThemeResource BlackAcrylicBackgroundBrush40}"
     RequestedTheme="Dark"
     mc:Ignorable="d">
     <Page.Resources>
@@ -24,7 +23,7 @@
     </Page.Resources>
     <Grid>
         <SplitView x:Name="splitView" IsPaneOpen="True" 
-                   PaneBackground="Transparent"
+                   PaneBackground="{ThemeResource BlackAcrylicBackgroundBrush40}"
                    OpenPaneLength="300" DisplayMode="Inline" >
             <SplitView.Pane>
                 <ctrl:TreeView x:Name="tree" SelectionMode="Single" VerticalAlignment="Center"/>
@@ -34,8 +33,14 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Standard" Margin="16 28" FontSize="32" FontWeight="SemiLight"
+                <StackPanel  Margin="16 28" Orientation="Horizontal">
+                    <AppBarButton Icon="More" Visibility="Collapsed"
+                                          Height="48" Width="48" x:Name="MenuAppBar"
+                                          Foreground="Black" HorizontalAlignment="Left"
+                                          VerticalAlignment="Top"/>
+                    <TextBlock Text="Standard" Margin="8 0 0 0" FontSize="32" FontWeight="SemiLight"
                            Foreground="#FFA5A5A5" FontFamily="Segoe UI"/>
+                </StackPanel>
                 <StackPanel HorizontalAlignment="Right" Margin="42,42,42,0" 
                             VerticalAlignment="Bottom">
                     <TextBlock Text="710+1890" FontSize="24" HorizontalAlignment="Right" />
@@ -88,7 +93,7 @@
                 </controls:DropShadowPanel>
             </Grid>
         </SplitView>
-        
+
         <TextBlock Text="Calculator" Height="32" Margin="48 0" Padding="0,6" Canvas.ZIndex="99"
                    HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="SemiLight"/>
         <Rectangle x:Name="Titlebar" Style="{ThemeResource CustomTitleBar}"/>

@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
 using Windos.View;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -10,10 +12,13 @@ namespace Windos
 {
     sealed partial class App : Application
     {
+        public static string AppCenterKey;
+        
         public App()
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            AppCenter.Start(AppCenterKey, typeof(Analytics));
         }
 
         protected override void OnLaunched(LaunchActivatedEventArgs e)

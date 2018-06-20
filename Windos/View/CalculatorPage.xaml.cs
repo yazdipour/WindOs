@@ -31,6 +31,23 @@ namespace Windos.View
             tree.RootNodes.Add(calculatorFolder);
             tree.RootNodes.Add(converterFolder);
             tree.RootNodes.Add(settings);
+            SizeChanged += (s, e) =>
+            {
+                if (e.NewSize.Width < 720)
+                {
+                    splitView.IsPaneOpen = false;
+                    splitView.DisplayMode = SplitViewDisplayMode.Overlay;
+                    MenuAppBar.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    splitView.IsPaneOpen = true;
+                    splitView.DisplayMode = SplitViewDisplayMode.Inline;
+                    MenuAppBar.Visibility = Visibility.Collapsed;
+                }
+
+            };
+            MenuAppBar.Click += (s, e) => splitView.IsPaneOpen = !splitView.IsPaneOpen;
         }
 
     }

@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="Windos.View.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Windos.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"   
+    Background="{ThemeResource AcrylicBackgroundBrush60}" >
+    <Grid>
+        <Rectangle x:Name="Titlebar" Style="{ThemeResource CustomTitleBar}"/>
+        <Button Click="GoHome_Click" Style="{ThemeResource CustomBackButton}"/>
+
+        <StackPanel>
+            <Image x:Name="LogoImage" Source="ms-appx:///Assets/LargeTile.png" Width="200" 
+                   Height="200" Margin="0 -48"/>
+            <TextBlock Text="WindOs" Style="{ThemeResource SubtitleTextBlockStyle}" 
+                       Margin="0 0 0 12" HorizontalAlignment="Center" />
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Center">
+                <Button Style="{StaticResource ButtonRevealStyle}" Height="42"
+                        Click="Store_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="SolidStar" Foreground="Gold" Margin="8"/>
+                        <TextBlock Text="Rate in Store" HorizontalAlignment="Center"
+                               Style="{ThemeResource BaseTextBlockStyle}" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Border BorderBrush="#3f000000" BorderThickness="1" Grid.RowSpan="2" Grid.Column="1"
+                        Margin="16 8"/>
+                <Button Style="{StaticResource ButtonRevealStyle}" Height="42"
+                        Click="Github_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="ms-appx:///Assets/Icons/github-character.png" Margin="4,4,4,4"
+                       Width="24" Height="24" HorizontalAlignment="Center"/>
+                        <TextBlock Style="{ThemeResource BaseTextBlockStyle}" VerticalAlignment="Center"
+                    Text="Visit Github Page" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <ScrollViewer x:Name="MarkdownScrollViewer" Margin="48 4 48 0"
+                              VerticalScrollMode="Enabled" 
+                              VerticalScrollBarVisibility="Visible">
+                <controls:MarkdownTextBlock x:Name="MarkdownText" Text="### Loading..."
+                                            Background="White" Padding="36" 
+                                  Header1Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
+                                  UriPrefix="https://github.com/yazdipour/WindOs" />
+            </ScrollViewer>
+        </StackPanel>
+    </Grid>
+</Page>
