@@ -6,10 +6,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    RequestedTheme="Dark"
-    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    RequestedTheme="Light"
     Background="{ThemeResource BlackAcrylicBackgroundBrush40}" >
-
+    <Page.Resources>
+        <Style TargetType="ListViewItemPresenter">
+            <Setter Property="CheckBrush" Value="{ThemeResource BlackAcrylicBackgroundBrush40}"/>
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -17,22 +20,27 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="32"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="48"/>
         </Grid.RowDefinitions>
-        <Rectangle Grid.Column="2" x:Name="Titlebar" Style="{ThemeResource CustomTitleBar}"
-                   Fill="{ThemeResource BlackAcrylicBackgroundBrush60}"/>
+        <Rectangle Grid.Row="1" Grid.ColumnSpan="3" Height="48"
+                   x:Name="Titlebar" Style="{ThemeResource CustomTitleBar}"
+                   Fill="{ThemeResource AcrylicBackgroundBrush20}"/>
 
-        <TextBlock x:Name="Console" Grid.ColumnSpan="3" Grid.Row="1" 
-                   Margin="4 0"  HorizontalAlignment="Stretch" FontFamily="Consolas"/>
+        <TextBlock x:Name="Console" Grid.ColumnSpan="3" Grid.Row="0" RequestedTheme="Dark"
+                   Margin="4 8"  HorizontalAlignment="Stretch" FontFamily="Consolas"/>
 
-        <Button Click="GoHome_Click" Style="{ThemeResource CustomBackButton}"/>
+        <Button Grid.Row="1"  Grid.Column="0" VerticalAlignment="Bottom" Height="48"
+                Click="GoHome_Click" Style="{ThemeResource CustomBackButton}"/>
 
-        <ListView Grid.Column="1" x:Name="TabLV" SelectionMode="Single" Height="32" 
-            VerticalAlignment="Top" Background="{ThemeResource BlackAcrylicBackgroundBrush60}"
+        <Button Grid.Row="1"  Grid.Column="2" VerticalAlignment="Bottom" Height="48"
+                Style="{ThemeResource CustomBackButton}" Content="" FontSize="12"/>
+
+        <ListView  Grid.Row="1"  Grid.Column="1" x:Name="TabLV" SelectionMode="Single" 
+            VerticalAlignment="Top" Background="Transparent" 
             ScrollViewer.HorizontalScrollMode="Enabled"
-            ScrollViewer.HorizontalScrollBarVisibility="Auto"
-            ScrollViewer.IsHorizontalRailEnabled="True">
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.IsHorizontalRailEnabled="False">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Orientation="Horizontal" />
@@ -40,18 +48,18 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Width="140" Height="32">
-                        <TextBlock Text="{Binding}" Height="32"
-                                   VerticalAlignment="Center"/>
-                        <TextBlock Text="&#xE10A;" FontSize="12"  Height="32"
+                    <Grid Width="140" Height="48">
+                        <TextBlock Text="{Binding}" VerticalAlignment="Center"/>
+                        <TextBlock Text="&#xE10A;" FontSize="12"  
                                   FontFamily="Segoe UI Symbol" 
+                                   VerticalAlignment="Center"
                                   HorizontalAlignment="Right"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <CommandBar  Grid.Row="1" Grid.ColumnSpan="3" 
-                     Background="{ThemeResource BlackAcrylicBackgroundBrush60}"
+        <CommandBar  Grid.Row="1" Grid.ColumnSpan="3"
+                     Background="Transparent"
                      HorizontalAlignment="Right" VerticalAlignment="Bottom"
                      IsOpen="False" DefaultLabelPosition="Collapsed">
             <AppBarButton Icon="Keyboard" Label="Open Vistual Keyboard"/>

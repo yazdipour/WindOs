@@ -28,18 +28,17 @@
         <Color x:Key="BlackAcrylicBrushTintColor1">#333</Color>
         <Color x:Key="BlackAcrylicBrushFallbackColor1">#111</Color>
 
+        <media:AcrylicBrush x:Key="AcrylicBackgroundBrush20" 
+                            BackgroundSource="HostBackdrop" 
+                            TintOpacity="0.2" 
+                            TintColor="{StaticResource AcrylicBrushTintColor1}" 
+                            FallbackColor="{StaticResource AcrylicBrushFallbackColor1}"/>
+
         <media:AcrylicBrush x:Key="AcrylicBackgroundBrush40" 
                             BackgroundSource="HostBackdrop" 
                             TintOpacity="0.4" 
                             TintColor="{StaticResource AcrylicBrushTintColor1}" 
                             FallbackColor="{StaticResource AcrylicBrushFallbackColor1}"/>
-
-
-        <media:AcrylicBrush x:Key="BlackAcrylicBackgroundBrush40" 
-                            BackgroundSource="HostBackdrop" 
-                            TintOpacity="0.4" 
-                            TintColor="{StaticResource BlackAcrylicBrushTintColor1}" 
-                            FallbackColor="{StaticResource BlackAcrylicBrushFallbackColor1}"/>
 
         <media:AcrylicBrush x:Key="AcrylicBackgroundBrush60" 
                             BackgroundSource="HostBackdrop" 
@@ -47,6 +46,12 @@
                             TintColor="{StaticResource AcrylicBrushTintColor1}" 
                             FallbackColor="{StaticResource AcrylicBrushFallbackColor1}"/>
 
+        <media:AcrylicBrush x:Key="BlackAcrylicBackgroundBrush40" 
+                            BackgroundSource="HostBackdrop" 
+                            TintOpacity="0.4" 
+                            TintColor="{StaticResource BlackAcrylicBrushTintColor1}" 
+                            FallbackColor="{StaticResource BlackAcrylicBrushFallbackColor1}"/>
+        
         <media:AcrylicBrush x:Key="BlackAcrylicBackgroundBrush60" 
                             BackgroundSource="HostBackdrop" 
                             TintOpacity="0.6" 
@@ -58,7 +63,8 @@
                             TintOpacity="0.7" 
                             TintColor="#fff" 
                             FallbackColor="#fff"/>
-        
+
+
         <media:AcrylicBrush x:Key="HeaderAcrylic" 
                                         BackgroundSource="HostBackdrop" 
                                         TintOpacity="0.8" 
