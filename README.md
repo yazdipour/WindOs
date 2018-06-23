@@ -18,14 +18,13 @@ I tried to do not share Xaml code between pages so that you can see all the xaml
 
 |  | ToDo | Concepts    | Screenshot  | Code
 | :- | :- | :- |:- | :-
-| Terminal | ✔  | [Link🔗](./Inspiration/Terminal)  | [Link🔗](./Screenshots/Terminal.PNG)  | [Link🔗](./Windos/View/)
-| Skype | ✔  | [Link🔗](./Inspiration/Skype)  | [Link🔗](./Screenshots/Skype.PNG)  | [Link🔗](./Windos/View/)
-| Calculator | ✔  | [Link🔗](./Inspiration/Calculator)  | [Link🔗](./Screenshots/Calculator.PNG)  | [Link🔗](./Windos/View/)
-| Microsoft ToDo | ✔ | [Link🔗](./Inspiration/Todo)  | [Link🔗](./Screenshots/ToDo.PNG)  | [Link🔗](./Windos/View./Windos/View/)
-| People | ✔  | [Link🔗](./Inspiration/People)  | [Link🔗](./Screenshots/People.PNG)  | [Link🔗](./Windos/View/)
-| Spotify | ❌  | [Link🔗](./Inspiration/Spotify)  | [Link🔗](./Screenshots/Spotify.PNG)  | [Link🔗](./Windos/View/)
-| FileExplorer | ❌ | [Link🔗](./Inspiration/FileExplorer)  | [Link🔗](./Screenshots/FileExplorer.PNG)  | [Link🔗](./Windos/View/)
-| Weather | ❌  | [Link🔗](./Inspiration/Weather)  | [Link🔗](./Screenshots/Weather.PNG)  | [Link🔗](./Windos/View/)
+| Terminal | ✔  | [Link🔗](./Inspiration/Terminal)  | [Link🔗](./Screenshots/Terminal.PNG)  | [Link🔗](./Windos/View/Terminal)
+| Skype | ✔  | [Link🔗](./Inspiration/Skype)  | [Link🔗](./Screenshots/Skype.PNG)  | [Link🔗](./Windos/View/Skype)
+| Calculator | ✔  | [Link🔗](./Inspiration/Calculator)  | [Link🔗](./Screenshots/Calculator.PNG)  | [Link🔗](./Windos/View/Calculator)
+| Microsoft ToDo | ✔ | [Link🔗](./Inspiration/Todo)  | [Link🔗](./Screenshots/ToDo.PNG)  | [Link🔗](./Windos/View./Windos/View/ToDo)
+| People | ✔  | [Link🔗](./Inspiration/People)  | [Link🔗](./Screenshots/People.PNG)  | [Link🔗](./Windos/View/People)
+| Spotify | ❌  | [Link🔗](./Inspiration/Spotify)  | [Link🔗](./Screenshots/Spotify.PNG)  | [Link🔗](./Windos/View/Spotify)
+| FileExplorer | ❌ | [Link🔗](./Inspiration/FileExplorer)  | [Link🔗](./Screenshots/FileExplorer.PNG)  | [Link🔗](./Windos/View/FileExplorer)
 
 ## Thanks to 😘:
 

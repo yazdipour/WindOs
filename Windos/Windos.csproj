@@ -108,28 +108,28 @@
     <Compile Include="View\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CalculatorPage.xaml.cs">
+    <Compile Include="View\Calculator\CalculatorPage.xaml.cs">
       <DependentUpon>CalculatorPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\FileExplorerPage.xaml.cs">
+    <Compile Include="View\FileExplorer\FileExplorerPage.xaml.cs">
       <DependentUpon>FileExplorerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\GroovePage.xaml.cs">
+    <Compile Include="View\Spotify\GroovePage.xaml.cs">
       <DependentUpon>GroovePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ToDoPage.xaml.cs">
+    <Compile Include="View\ToDo\ToDoPage.xaml.cs">
       <DependentUpon>ToDoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PeoplePage.xaml.cs">
+    <Compile Include="View\People\PeoplePage.xaml.cs">
       <DependentUpon>PeoplePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SkypePage.xaml.cs">
+    <Compile Include="View\Skype\SkypePage.xaml.cs">
       <DependentUpon>SkypePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\TerminalPage.xaml.cs">
+    <Compile Include="View\Terminal\TerminalPage.xaml.cs">
       <DependentUpon>TerminalPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -215,15 +215,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\CalculatorPage.xaml">
+    <Page Include="View\Calculator\CalculatorPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\FileExplorerPage.xaml">
+    <Page Include="View\FileExplorer\FileExplorerPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\GroovePage.xaml">
+    <Page Include="View\Spotify\GroovePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -231,19 +231,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\ToDoPage.xaml">
+    <Page Include="View\ToDo\ToDoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PeoplePage.xaml">
+    <Page Include="View\People\PeoplePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SkypePage.xaml">
+    <Page Include="View\Skype\SkypePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\TerminalPage.xaml">
+    <Page Include="View\Terminal\TerminalPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
