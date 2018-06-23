@@ -43,9 +43,9 @@
                               VerticalScrollMode="Enabled" 
                               VerticalScrollBarVisibility="Visible">
                 <controls:MarkdownTextBlock x:Name="MarkdownText" Text="### Loading..."
-                                            Background="White" Padding="36" 
+                                            Background="White" Padding="36" LinkClicked="MarkdownText_LinkClicked"
                                   Header1Foreground="{ThemeResource SystemControlForegroundAccentBrush}"
-                                  UriPrefix="https://github.com/yazdipour/WindOs" />
+                                  UriPrefix="{x:Bind _prefix}" />
             </ScrollViewer>
         </StackPanel>
     </Grid>
