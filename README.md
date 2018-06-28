@@ -7,7 +7,10 @@ I spent one or two hours (average) after I get home from work to write each Xaml
 
 I tried to do not share Xaml code between pages so that you can see all the xamls in a single file. My codes are not clean and I don't have much time making them better. If you think you can help, I accept pull request.
 
-#### Build with AppCenter
+### Download and Test
+[![download](https://img.shields.io/badge/download-%40appcenter-blue.svg)](https://install.appcenter.ms/users/yazdipour/apps/windos/distribution_groups/public)
+
+### Build Status
 [![Build status](https://build.appcenter.ms/v0.1/apps/29c34f2a-5fba-465e-8b15-9e42d4d6ef73/branches/master/badge)](https://appcenter.ms)
 
 # Sample
