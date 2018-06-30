@@ -17,8 +17,8 @@ I tried to do not share Xaml code between pages so that you can see all the xaml
 
 | | Now    | Concept  | Wind Os
 | :- | :- |:- | :-
-| Skype | ![Skype Now](./README/Skype_Windows.png) | ![Skype Concept](./README/Skype_Concept.png) | ![Skype Wind Os](./README/Skype_Screenshot.png)
-| People | ![People Now](./README/People_Windows.png) | ![People Concept](./README/People_Concept.png) | ![People Wind Os](./README/People_Screenshot.png)
+| Skype | ![Skype Now](./README/Skype_Windows.png) | ![Skype Concept](./README/Skype_Concept.png) | ![Skype Wind Os](./Screenshots/Skype.png)
+| People | ![People Now](./README/People_Windows.png) | ![People Concept](./README/People_Concept.png) | ![People Wind Os](./Screenshots/People.png)
 
 |  | ToDo | Concepts    | Screenshot  | Code
 | :- | :- | :- |:- | :-
