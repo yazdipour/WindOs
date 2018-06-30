@@ -1,5 +1,5 @@
 # Wind Os
-![./Inspiration/Icon/WindOs/storm.png](./storm.png)
+![./README/storm.png](./README/storm.png)
 
 I opened this repo to implement a couple of beautiful UI concepts in Xaml to show that UWP Applications can look much better with a little effort. 
 
@@ -15,9 +15,10 @@ I tried to do not share Xaml code between pages so that you can see all the xaml
 
 # Sample
 
-| Now    | Concept  | Wind Os
-| :- |:- | :-
-| ![Skype Now](Skype_Windows.png) | ![Skype Concept](Skype_Concept.png) | ![Skype Wind Os](Skype_Screenshot.png)
+| | Now    | Concept  | Wind Os
+| :- | :- |:- | :-
+| Skype | ![Skype Now](./README/Skype_Windows.png) | ![Skype Concept](./README/Skype_Concept.png) | ![Skype Wind Os](./README/Skype_Screenshot.png)
+| People | ![People Now](./README/People_Windows.png) | ![People Concept](./README/People_Concept.png) | ![People Wind Os](./README/People_Screenshot.png)
 
 |  | ToDo | Concepts    | Screenshot  | Code
 | :- | :- | :- |:- | :-

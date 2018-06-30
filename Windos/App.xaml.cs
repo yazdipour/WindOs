@@ -12,7 +12,7 @@ namespace Windos
 {
     sealed partial class App : Application
     {
-        public static string AppCenterKey;
+        public static string AppCenterKey = "bc1bcd25-7451-40ba-9e21-8115ea668080";
         
         public App()
         {
